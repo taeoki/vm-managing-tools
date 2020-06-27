@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: no
+  
+  tasks:
+  - name: INPUTCOMMAND
+    command: "{{ command }}"
+    register: result
+#    ignore_errors: True
+  - debug:
+     msg: "{{ result.stdout }}"

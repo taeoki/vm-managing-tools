@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: no
+  
+  tasks:
+  - name: 
+    connection: local
+    command: "ssh-keygen -f /var/jenkins_home/.ssh/id_rsa -q -N ''"
+    ignore_errors: yes
+    run_once: true
+    
+  - name: ssh-copy-id to node
+    command: "sshpass -p 'password' ssh-copy-id -f {{ hosts_var }} "
+    register: result
+    
+  - debug:
+      msg: "{{ result.stdout }}"

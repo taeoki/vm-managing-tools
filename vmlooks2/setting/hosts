@@ -1,0 +1,5 @@
+[test]
+34.64.142.186	ansible_user=root
+34.64.206.85	ansible_user=root
+52.231.164.71	ansible_user=root
+52.187.134.60	ansible_user=root

@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: no
+  
+  tasks:
+  - name: To Create Directory
+    file: 
+      path: "{{ dir_path }}"
+      state: directory
+      
+    tasks:
+    - name: 
+      copy:
+        src: "{{ file_path }}"
+        dest: 
